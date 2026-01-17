@@ -20,7 +20,7 @@ const Accordion = React.forwardRef<
     value?: string;
     onValueChange?: (value: string) => void;
   }
->(({ className, type = "single", defaultValue, value: controlledValue, onValueChange, children, ...props }, ref) => {
+>(({ className, type: _type = "single", defaultValue, value: controlledValue, onValueChange, children, ...props }, ref) => {
   const [uncontrolledValue, setUncontrolledValue] = React.useState<string | undefined>(defaultValue);
 
   const value = controlledValue !== undefined ? controlledValue : uncontrolledValue;

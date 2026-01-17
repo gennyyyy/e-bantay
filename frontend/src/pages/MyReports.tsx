@@ -20,7 +20,7 @@ export default function MyReports() {
         const allReports = await api.getReports();
         // Simulating "My Reports" by taking a subset or just showing all for now
         setReports(allReports.slice(0, 3));
-      } catch (error) {
+      } catch {
         toast.error("Failed to load your reports");
       } finally {
         setLoading(false);

@@ -27,7 +27,7 @@ export default function IncidentMap() {
       try {
         const data = await api.getReports();
         setReports(data);
-      } catch (error) {
+      } catch {
         toast.error("Failed to load incidents");
       } finally {
         setLoading(false);

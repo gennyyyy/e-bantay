@@ -25,8 +25,8 @@ export default function AdminDashboard() {
     try {
       const data = await api.getReports();
       setReports(data);
-    } catch (error) {
-      toast.error("Failed to fetch reports");
+    } catch {
+      toast.error("Failed to load dashboard data");
     } finally {
       setLoading(false);
     }

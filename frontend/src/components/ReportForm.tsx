@@ -8,9 +8,19 @@ import { Textarea } from "@/components/ui/textarea"
 import { MapPin, FileText, Calendar, Clock, Send, AlertCircle, CheckCircle2, Camera, X, ImagePlus, Upload } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
+export interface ReportFormData {
+  type: string;
+  description: string;
+  date: string;
+  time: string;
+  contact: string;
+  location: { lat: number; lng: number } | null;
+  images: File[];
+}
+
 interface ReportFormProps {
   selectedLocation: { lat: number; lng: number } | null;
-  onSubmit: (data: any) => void;
+  onSubmit: (data: ReportFormData) => void;
 }
 
 interface UploadedImage {

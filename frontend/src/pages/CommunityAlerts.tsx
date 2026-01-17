@@ -16,7 +16,7 @@ export default function CommunityAlerts() {
       try {
         const data = await api.getAlerts();
         setAlerts(data);
-      } catch (error) {
+      } catch {
         toast.error("Failed to load alerts");
       } finally {
         setLoading(false);

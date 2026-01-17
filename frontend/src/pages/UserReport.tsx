@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Map from '@/components/Map';
 import { BARANGAY_CONFIG } from '@/types';
-import ReportForm from '@/components/ReportForm';
+import ReportForm, { type ReportFormData } from '@/components/ReportForm';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { CheckCircle2, Shield, MousePointerClick, Check, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -23,14 +23,14 @@ export default function UserReport() {
     toast.error("Location is outside the barangay boundary.");
   };
 
-  const handleReportSubmit = async (data: any) => {
+  const handleReportSubmit = async (data: ReportFormData) => {
     setSubmitting(true);
     try {
-      await api.createReport(data);
+      await api.createReport({ ...data, reporter: 'Anonymous', location: data.location! });
       setShowSuccess(true);
       setSelectedLocation(null);
       toast.success("Report submitted successfully");
-    } catch (error) {
+    } catch {
       toast.error("Failed to submit report. Please try again.");
     } finally {
       setSubmitting(false);

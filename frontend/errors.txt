@@ -1,0 +1,37 @@
+
+File: D:\code ni hans\E-Bantay\frontend\src\components\ReportForm.tsx
+  13:20 [Error] Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)
+
+File: D:\code ni hans\E-Bantay\frontend\src\components\ThemeProvider.tsx
+  66:14 [Error] Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components. (react-refresh/only-export-components)
+
+File: D:\code ni hans\E-Bantay\frontend\src\components\ui\accordion.tsx
+  23:17 [Error] 'type' is assigned a value but never used. Allowed unused args must match /^_/u. (@typescript-eslint/no-unused-vars)
+
+File: D:\code ni hans\E-Bantay\frontend\src\components\ui\badge.tsx
+  36:17 [Error] Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components. (react-refresh/only-export-components)
+
+File: D:\code ni hans\E-Bantay\frontend\src\components\ui\button.tsx
+  56:18 [Error] Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components. (react-refresh/only-export-components)
+
+File: D:\code ni hans\E-Bantay\frontend\src\context\AuthContext.tsx
+  61:17 [Error] Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components. (react-refresh/only-export-components)
+
+File: D:\code ni hans\E-Bantay\frontend\src\context\ThemeContext.tsx
+  45:17 [Error] Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components. (react-refresh/only-export-components)
+
+File: D:\code ni hans\E-Bantay\frontend\src\pages\AdminDashboard.tsx
+  28:14 [Error] 'error' is defined but never used. (@typescript-eslint/no-unused-vars)
+
+File: D:\code ni hans\E-Bantay\frontend\src\pages\CommunityAlerts.tsx
+  19:16 [Error] 'error' is defined but never used. (@typescript-eslint/no-unused-vars)
+
+File: D:\code ni hans\E-Bantay\frontend\src\pages\IncidentMap.tsx
+  30:16 [Error] 'error' is defined but never used. (@typescript-eslint/no-unused-vars)
+
+File: D:\code ni hans\E-Bantay\frontend\src\pages\MyReports.tsx
+  23:16 [Error] 'error' is defined but never used. (@typescript-eslint/no-unused-vars)
+
+File: D:\code ni hans\E-Bantay\frontend\src\pages\UserReport.tsx
+  26:43 [Error] Unexpected any. Specify a different type. (@typescript-eslint/no-explicit-any)
+  33:14 [Error] 'error' is defined but never used. (@typescript-eslint/no-unused-vars)
