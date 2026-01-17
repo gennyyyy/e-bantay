@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+
+    /* Custom colors */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 222 47% 11%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 223 47% 11%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  /* Container with safe max-width and centering */
+  .container {
+    @apply w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(221 83% 53% / 0.03) 0%, hsl(199 89% 48% / 0.03) 100%);
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-primary/20;
+  }
+
+  .stat-card {
+    @apply relative overflow-hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+
+  .section-padding {
+    @apply py-8 lg:py-10;
+  }
+}
+
+/* Leaflet map customizations */
+.leaflet-container {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  z-index: 0;
+  border-radius: 0.75rem;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply rounded-xl shadow-xl border-0;
+  background: white !important;
+}
+
+.leaflet-popup-content {
+  margin: 14px 18px !important;
+}
+
+.leaflet-popup-tip {
+  background: white !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40;
+}
+
+/* Animation classes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes userLocationPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+}
+
+.stagger-1 {
+  animation-delay: 0.05s;
+}
+
+.stagger-2 {
+  animation-delay: 0.1s;
+}
+
+.stagger-3 {
+  animation-delay: 0.15s;
+}
+
+.stagger-4 {
+  animation-delay: 0.2s;
+}
+
+.stagger-5 {
+  animation-delay: 0.25s;
+}
+
+.stagger-6 {
+  animation-delay: 0.30s;
+}
+
+.stagger-7 {
+  animation-delay: 0.35s;
+}
+
+.stagger-8 {
+  animation-delay: 0.40s;
+}
+
+.stagger-9 {
+  animation-delay: 0.45s;
+}
+
+.stagger-10 {
+  animation-delay: 0.50s;
+}
+
+.stagger-11 {
+  animation-delay: 0.55s;
+}
+
+.stagger-12 {
+  animation-delay: 0.60s;
+}
+
+.stagger-13 {
+  animation-delay: 0.65s;
+}
+
+.stagger-14 {
+  animation-delay: 0.70s;
+}
+
+.stagger-15 {
+  animation-delay: 0.75s;
+}
+
+.stagger-16 {
+  animation-delay: 0.80s;
+}
+
+.stagger-17 {
+  animation-delay: 0.85s;
+}
+
+.stagger-18 {
+  animation-delay: 0.90s;
+}
+
+.stagger-19 {
+  animation-delay: 0.95s;
+}
+
+.stagger-20 {
+  animation-delay: 1.00s;
+}
+
+/* Page background pattern */
+.page-pattern {
+  background-image:
+    radial-gradient(circle at 20% 50%, hsl(221 83% 53% / 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsl(199 89% 48% / 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, hsl(142 71% 45% / 0.02) 0%, transparent 50%);
+}
+
+/* Form input focus enhancement */
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  @apply outline-none ring-2 ring-primary/20 ring-offset-2;
+}
+
+/* Better shadows */
+.shadow-soft {
+  box-shadow:
+    0 2px 8px -2px rgba(0, 0, 0, 0.05),
+    0 4px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-elevated {
+  box-shadow:
+    0 4px 12px -2px rgba(0, 0, 0, 0.08),
+    0 8px 24px -4px rgba(0, 0, 0, 0.12);
+}
